@@ -21,7 +21,7 @@ const SignUp = () => {
     e.preventDefault();
     setMessage('');
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/signup', formData);
+      const res = await axios.post('https://smith-server-qpxw.vercel.app/api/auth/signup', formData);
       setMessage(res.data.message || 'Signup successful!');
       setFormData({ username: '', email: '', password: '' });
     } catch (err) {

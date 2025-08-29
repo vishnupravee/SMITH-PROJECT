@@ -15,7 +15,7 @@ const SmithList = () => {
   // Fetch smiths
   const fetchSmiths = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/smiths");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/smiths");
       setSmiths(res.data.data);
     } catch (err) {
       console.error("Error fetching smiths:", err);
@@ -25,7 +25,7 @@ const SmithList = () => {
   // Add smith
   const handleSaveSmith = async (data) => {
     try {
-      await axios.get("http://localhost:3000/api/smiths", data);
+      await axios.get("https://smith-server-qpxw.vercel.app/api/smiths", data);
       fetchSmiths();
       setShowForm(false);
     } catch (err) {
@@ -36,7 +36,7 @@ const SmithList = () => {
     // Delete product
   const handleDeleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/smiths/${id}`);
+      await axios.delete(`https://smith-server-qpxw.vercel.app/api/smiths/${id}`);
       setSmiths(smiths.filter((p) => p._id !== id));
       console.log("Product deleted:", id);
     } catch (err) {

@@ -10,7 +10,7 @@ export default function OrderedList() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/orders");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/orders");
       setOrders(res.data.data);
     } catch (err) {
       console.error("Error fetching orders:", err);
@@ -21,7 +21,7 @@ export default function OrderedList() {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
 
     try {
-      await axios.delete(`http://localhost:3000/api/orders/${orderId}`);
+      await axios.delete(`https://smith-server-qpxw.vercel.app/api/orders/${orderId}`);
       setOrders(orders.filter((o) => o._id !== orderId)); // update UI
       alert("✅ Order deleted successfully");
     } catch (err) {

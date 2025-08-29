@@ -19,7 +19,7 @@ const CategoryFormModal = ({ show, onClose, onSave }) => {
 //   };
 const onSubmit = async (data) => {
   try {
-    const res = await fetch("http://localhost:3000/api/categories", {
+    const res = await fetch("https://smith-server-qpxw.vercel.app/api/categories", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

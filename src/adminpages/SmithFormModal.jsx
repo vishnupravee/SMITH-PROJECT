@@ -16,7 +16,7 @@ const SmithFormModal = ({ show, onClose, onSave }) => {
 //   };
 const onSubmit = async (data) => {
   try {
-    const res = await fetch("http://localhost:3000/api/smiths", {
+    const res = await fetch("https://smith-server-qpxw.vercel.app/api/smiths", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

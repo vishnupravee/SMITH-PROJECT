@@ -14,7 +14,7 @@ const ManagerSmithList = () => {
   // Fetch smiths
   const fetchSmiths = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/smiths");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/smiths");
       setSmiths(res.data.data);
     } catch (err) {
       console.error("Error fetching smiths:", err);

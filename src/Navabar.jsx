@@ -46,7 +46,7 @@ const Navbar = () => {
   // ✅ Fetch cart item count
   const fetchCartCount = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/cart/${user._id}`);
+      const res = await axios.get(`https://smith-server-qpxw.vercel.app/api/cart/${user._id}`);
       setCartCount(res.data.length); // assuming backend returns array of items
     } catch (err) {
       console.error("❌ Error fetching cart count:", err);

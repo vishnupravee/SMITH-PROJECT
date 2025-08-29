@@ -30,7 +30,7 @@ const ProductFormModal = ({ show, onClose, onSave,categories,smiths,subcategorie
      
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/categories");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/categories");
       setSelectedCategory(res.data.data); // backend should return [{_id, name}]
       console.log(res.data.data, " categories fetched");
     } catch (err) {
@@ -41,7 +41,7 @@ console.log(selectedCategory,"rrrrrrrr");
 
   const fetchsubCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/subcategories");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/subcategories");
       setselectedSubcategories(res.data); // backend should return [{_id, name}]
       console.log(res.data, " categories fetched");
     } catch (err) {
@@ -54,7 +54,7 @@ console.log(selectedCategory,"rrrrrrrr");
 
   const fetchSmiths = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/smiths");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/smiths");
       setselectedSmiths(res.data.data);
     } catch (err) {
       console.error("Error fetching smiths:", err);
@@ -101,7 +101,7 @@ console.log(selectedCategory,"rrrrrrrr");
         formData.append("image", data.image[0]); // product image
       }
 
-      const res = await axios.post("http://localhost:3000/api/products", formData, {
+      const res = await axios.post("https://smith-server-qpxw.vercel.app/api/products", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

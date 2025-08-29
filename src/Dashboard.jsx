@@ -16,7 +16,7 @@ const Dashboard = () => {
     }
 
     axios
-      .get('http://localhost:3000/api/user/profile', {
+      .get('https://smith-server-qpxw.vercel.app/api/user/profile', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

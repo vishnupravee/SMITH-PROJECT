@@ -16,7 +16,7 @@ const CartList = () => {
   // ✅ Fetch cart items
   const fetchCartItems = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/cart/${user.id}`);
+      const res = await axios.get(`https://smith-server-qpxw.vercel.app/api/cart/${user.id}`);
       setCartItems(res.data);
     } catch (err) {
       console.error("❌ Error fetching cart:", err);
@@ -32,7 +32,7 @@ const CartList = () => {
 
   const removeItem = async (productId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/cart/${user.id}/${productId}`);
+      await axios.delete(`https://smith-server-qpxw.vercel.app/api/cart/${user.id}/${productId}`);
       setCartItems(cartItems.filter((item) => item.productId !== productId));
     } catch (err) {
       console.error("❌ Error removing item:", err);
@@ -43,7 +43,7 @@ const CartList = () => {
   const updateQty = async (productId, qty) => {
     if (qty < 1) return;
     try {
-      await axios.put(`http://localhost:3000/api/cart/${user.id}`, {
+      await axios.put(`https://smith-server-qpxw.vercel.app/api/cart/${user.id}`, {
         productId,
         qty,
       });

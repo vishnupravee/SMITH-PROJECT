@@ -21,7 +21,7 @@ const ManagerLogin = () => {
     setMessage('');
 
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/manager-login', formData);
+      const res = await axios.post('https://smith-server-qpxw.vercel.app/api/auth/manager-login', formData);
       const { token, user } = res.data;
 
       if (user.role !== 'admin') {

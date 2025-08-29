@@ -108,7 +108,7 @@ const ProductList = () => {
 
   const fetchsubCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/subcategories");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/subcategories");
       setSubcategories(res.data); // backend should return [{_id, name}]
       console.log(res.data, " categories fetched");
     } catch (err) {
@@ -118,7 +118,7 @@ const ProductList = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/categories");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/categories");
       setCategories(res.data.data); // backend should return [{_id, name}]
       console.log(res.data.data, " categories fetched");
     } catch (err) {
@@ -128,7 +128,7 @@ const ProductList = () => {
 
   const fetchSmiths = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/smiths");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/smiths");
       setSmiths(res.data.data);
     } catch (err) {
       console.error("Error fetching smiths:", err);
@@ -137,7 +137,7 @@ const ProductList = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/products");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/products");
       setProducts(res.data.data); 
       console.log(res.data.data," products fetched"); // Log products to verify
       // backend should return array of products
@@ -150,7 +150,7 @@ const ProductList = () => {
   // Save new product (POST request)
   const handleSaveProduct = async (data) => {
     try {
-      const res = await axios.get("http://localhost:3000/api/products", data);
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/products", data);
       setProducts([...products, res.data]);
       console.log("Product saved:", res.data); // Log saved product
       
@@ -164,7 +164,7 @@ const ProductList = () => {
     // Delete product
   const handleDeleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/products/${id}`);
+      await axios.delete(`https://smith-server-qpxw.vercel.app/api/products/${id}`);
       setProducts(products.filter((p) => p._id !== id));
       console.log("Product deleted:", id);
     } catch (err) {

@@ -26,11 +26,11 @@ function ManagerDashboard() {
   const [stats, setStats] = useState({ userCount: 0, orderCount: 0 });
 
   useEffect(() => {
-     axios.get("http://localhost:3000/api/dashboard/user-graph").then(res => setUserGraph(res.data));
-    axios.get("http://localhost:3000/api/dashboard/order-graph").then(res => setOrderGraph(res.data));
+     axios.get("https://smith-server-qpxw.vercel.app/api/dashboard/user-graph").then(res => setUserGraph(res.data));
+    axios.get("https://smith-server-qpxw.vercel.app/api/dashboard/order-graph").then(res => setOrderGraph(res.data));
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/dashboard/stats");
+        const res = await axios.get("https://smith-server-qpxw.vercel.app/api/dashboard/stats");
         if (res.data.success) {
           setStats(res.data.data);
         }

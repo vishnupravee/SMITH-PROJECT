@@ -16,7 +16,7 @@ const CategoryList = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/categories");
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/categories");
       setCategories(res.data.data); // backend should return [{_id, name}]
       console.log(res.data.data, " categories fetched");
     } catch (err) {
@@ -27,7 +27,7 @@ const CategoryList = () => {
   // Handle saving category
   const handleSaveCategory = async (data) => {
     try {
-      const res = await axios.get("http://localhost:3000/api/categories", data);
+      const res = await axios.get("https://smith-server-qpxw.vercel.app/api/categories", data);
       setCategories([...categories, res.data]); // append new category
       console.log("Category saved:", res.data);
 
@@ -40,7 +40,7 @@ const CategoryList = () => {
       // Delete product
     const handleDeleteProduct = async (id) => {
       try {
-        await axios.delete(`http://localhost:3000/api/categories/${id}`);
+        await axios.delete(`https://smith-server-qpxw.vercel.app/api/categories/${id}`);
         setCategories(categories.filter((p) => p._id !== id));
         console.log("Product deleted:", id);
       } catch (err) {
