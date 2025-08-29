@@ -1,0 +1,16 @@
+.subcategory-list-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subcategory-table th {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.subcategory-table td {
+  text-align: center;
+}
