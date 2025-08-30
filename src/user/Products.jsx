@@ -423,6 +423,7 @@ console.log(products,"prooooooooduct");
 
   console.log(stats,"staaaaaaaaaates");
   
+console.log(categories,"categorieeeeeeeees");
 
   return (
     <div className="container-fluid mt-5">
@@ -538,7 +539,7 @@ console.log(products,"prooooooooduct");
                   <div className="product-card__details">
                     <img
                       className="product-card__image"
-                      src={`https://smith-server-qpxw.vercel.app/${item.image}`}
+                      src={item.image}
                       alt={`${item.subCategory} — ${item.weight}g`}
                       loading="lazy"
                     />
