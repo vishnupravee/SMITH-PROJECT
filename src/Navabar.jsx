@@ -32,6 +32,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import logo from "../src/assets/1000360388-removebg-preview.png";
 
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
@@ -55,9 +56,14 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+     
       <Link className="navbar-brand" to="/">
-        SMITH LINK
-      </Link>
+  <img 
+    src={logo}   // 👈 place your logo inside public/images/
+    alt="Smith Logo" 
+    style={{ height: "40px" }} 
+  />
+</Link>
 
       <button
         className="navbar-toggler"

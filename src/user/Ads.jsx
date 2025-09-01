@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "../user/Ads.css";
 
 // Import your images from assets
-import ad1 from "../assets/img.png";
-import ad2 from "../assets/img3.png";
+import ad1 from "../assets/ChatGPT Image Sep 1, 2025, 10_11_01 AM.png";
+import ad2 from "../assets/ChatGPT Image Sep 1, 2025, 10_17_38 AM.png";
 
 const Ads = () => {
   const images = [ad1, ad2]; // Add more if needed
