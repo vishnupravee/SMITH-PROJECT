@@ -110,7 +110,7 @@ const CartList = () => {
         <td>{item.productName}</td>
         <td>{item.category}</td>
         <td>{days} Day{days > 1 ? "s" : ""}</td> {/* ✅ Plural support */}
-        <td>
+        <td className="d-block d-md-table-cell">
           <input
             type="number"
             min="1"

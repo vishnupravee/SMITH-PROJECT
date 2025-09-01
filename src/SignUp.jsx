@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const SignUp = () => {
     email: '',
     password: '',
   });
+  const navigate = useNavigate();
 
   const [message, setMessage] = useState('');
 
@@ -23,13 +25,18 @@ const SignUp = () => {
     try {
       const res = await axios.post('https://smith-server-qpxw.vercel.app/api/auth/signup', formData);
       setMessage(res.data.message || 'Signup successful!');
-      
+       if (res.data.success) {
+        // ✅ Redirect after short delay or immediately
+        navigate("/");
+      }
       setFormData({ username: '', email: '', password: '' });
     } catch (err) {
       setMessage(err.response?.data?.message || 'Signup failed');
     }
   };
 
+  console.log(message,"messaggeeeeeeeeeeeeeeeee");
+  
   return (
     <div className="container mt-5" style={{ maxWidth: '400px' }}>
       <h2 className="mb-4">Sign Up</h2>
