@@ -26,7 +26,7 @@ const onSubmit = async (data) => {
     if (result.success) {
       alert("✅ smith saved!");
     //   onSave(result.data);  // update parent state
-    onSave(data); 
+    onSave(data.data); 
       reset();
       onClose();
     } else {

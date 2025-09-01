@@ -429,7 +429,7 @@ const ProductFormModal = ({ show, onClose, onSave, categories, smiths, subcatego
 
       if (res.data.success) {
         alert("✅ Product saved!");
-        onSave(res.data.data);
+        onSave(res.data.data.data);
         reset();
         setPreviewImage(null);
         onClose();

@@ -145,7 +145,7 @@ const ProductList = () => {
       console.error("Error fetching products:", err);
     }
   };
-  console.log(products,"productsssssssss");
+  console.log(products,"productsssssssssss");
   
   // Save new product (POST request)
   const handleSaveProduct = async (data) => {

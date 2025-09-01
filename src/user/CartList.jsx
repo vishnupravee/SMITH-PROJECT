@@ -110,7 +110,7 @@ const CartList = () => {
         <td>{item.productName}</td>
         <td>{item.category}</td>
         <td>{days} Day{days > 1 ? "s" : ""}</td> {/* ✅ Plural support */}
-        <td className="d-block d-md-table-cell">
+        {/* <td className="d-block d-md-table-cell">
           <input
             type="number"
             min="1"
@@ -120,7 +120,8 @@ const CartList = () => {
               updateQty(item.productId, parseInt(e.target.value))
             }
           />
-        </td>
+        </td> */}
+        <td>{item.quantity}</td>
         <td>
           <button
             className="btn btn-danger btn-sm"

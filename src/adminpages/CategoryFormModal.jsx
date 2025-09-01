@@ -28,7 +28,7 @@ const onSubmit = async (data) => {
     const result = await res.json();
     if (result.success) {
       alert("✅ Category saved!");
-      onSave(data);  // update parent state
+      onSave(data.data);  // update parent state
       reset();
       onClose();
     } else {
